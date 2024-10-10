@@ -1,0 +1,93 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            margin: 0;
+            color: #333;
+        }
+        .navbar {
+            background-color: rgba(225, 190, 231, 0.8);
+            padding: 8px;
+            text-align: right;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            margin-bottom: 10px;
+        }
+        .navbar .icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 8px;
+        }
+        .navbar .icon i {
+            color: white;
+            font-size: 20px;
+        }
+        .navbar .logo {
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .navbar button {
+            background-color: rgba(225, 190, 231, 0.8);
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            padding: 8px 12px;
+            margin: 0 8px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .navbar button:hover {
+            background-color: rgba(209, 163, 209, 0.8);
+            transform: translateY(-2px);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 100px);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="icon">
+        <i class="fas fa-file-invoice-dollar"></i>
+    </div>
+    <div class="logo">Planejamento Fiscal</div>
+    <div style="display: inline-block; margin-left: 100px;">
+        <button onclick="window.location.href='/'">Home</button>
+        <button onclick="window.location.href='/usuarios'">Cadastro de Usuário</button>
+        <button onclick="window.location.href='/usuarios/pesquisa'">Usuários Cadastrados</button>
+        <button onclick="window.location.href='/orcamento'">Gerenciamento de Orçamento</button>
+    </div>
+</div>
+<div class="container">
+    <!-- Tela principal limpa, sem conteúdo -->
+    <h1> </h1>
+</div>
+</body>
+</html>
