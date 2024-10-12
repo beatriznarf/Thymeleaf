@@ -8,12 +8,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+
         body {
             font-family: 'Georgia', serif;
             background-color: white;
             backdrop-filter: blur(10px);
             margin: 0;
             color: #333;
+        }
+
+         .decor-circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(94, 197, 126, 0.3); /* Verde com transparência */
+            z-index: -1; /* Certifica que fique atrás de outros elementos */
+         }
+       .circle1 {
+            width: 150px;
+            height: 150px;
+            top: 50px;
+            left: 50px;
+          }
+        .circle2 {
+            width: 100px;
+            height: 100px;
+            bottom: 50px;
+            right: 100px;
+         }
+
+
+
+
+           /* Estilo do contêiner fixo à direita */
+        .container-right {
+            position: fixed;
+            top: 40px;
+            right: 20px;
+            width: 600px; /* Largura do contêiner */
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center;    /* Centraliza verticalmente (caso o contêiner tenha altura definida) */
+            margin-top: 10px;
+        }
+
+        /* Estilo para as imagens */
+        .container-right img {
+            width: 80%; /* Ajusta a largura das imagens ao tamanho do contêiner */
+            height: auto;
         }
 
 
@@ -72,11 +116,15 @@
             max-width: 600px;
             margin-top: 20px;
         }
+
+
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
             text-align: center;
         }
+
+
         .titulo {
             font-size: 20px;
             color: black;
@@ -85,10 +133,15 @@
             margin-top: 20px;
         }
         .titulo img {
-            width: 20px;
+            width: 150px;
             height: auto;
             margin-right: 8px;
         }
+
+
+
+
+
         .descricao {
             font-size: 18px;
             color: black;
@@ -113,23 +166,33 @@
 
     <div style="display: inline-block; margin-right: 20px;"> <!-- Ajuste para o canto direito -->
         <button onclick="window.location.href='/'"><i class="fas fa-home"></i> Home </button>
+        <div class="decor-circle circle1"></div>
         <button onclick="window.location.href='/usuarios'"><i class="fas fa-user-plus"></i></i> Cadastro de Usuário </button>
         <button onclick="window.location.href='/usuarios/pesquisa'"> <i class="fas fa-users"></i> Usuários Cadastrados </button>
+
         <button onclick="window.location.href='/orcamento'"> <i class="fas fa-balance-scale"></i> Gerenciamento de Orçamento </button>
     </div>
 </div>
 
 
+
 <div class="container">
     <div class="content">
         <h1 class="titulo">
-            <img src="https://cdn-icons-png.flaticon.com/512/5054/5054664.png" alt="Ícone ICMS">
             ENTENDENDO O ICMS: IMPOSTO SOBRE CIRCULAÇÃO DE MERCADORIAS E SERVIÇOS
         </h1>
         <p class="descricao">
             O <span>ICMS</span>, ou <span>Imposto sobre Circulação de Mercadorias e Serviços</span>, é um tributo fundamental no Brasil que incide sobre a movimentação de mercadorias e a prestação de serviços de transporte e comunicação. Estabelecido pela Constituição Federal, o <span>ICMS</span> é um <span>imposto estadual</span>, o que significa que as alíquotas e regulamentações podem variar de um estado para outro. Este tributo desempenha um papel crucial na arrecadação de <span>receitas estaduais</span>, sendo uma das principais fontes de financiamento para serviços públicos. Compreender a complexidade do <span>ICMS</span> é essencial para <span>empresários</span> e <span>consumidores</span>, pois ele impacta diretamente nos preços dos produtos e serviços, além de influenciar decisões de negócios e estratégias fiscais.
         </p>
+        <div class="decor-circle circle1"></div>
     </div>
 </div>
+
+
+
+<div class="container-right">
+    <img src="https://img.freepik.com/vetores-gratis/ilustracao-do-conceito-de-preparacao-de-impostos_114360-16337.jpg?ga=GA1.1.127442308.1728697082&semt=ais_hybrid" alt="Imagem 1">
+</div>
+
 </body>
 </html>
