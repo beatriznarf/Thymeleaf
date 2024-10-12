@@ -44,21 +44,6 @@ public class OrcamentoService {
     public void deletaOrcamento(Long id){
         orcamentoRepository.deleteById(id);
     }
-
-    //funções
-    //Função calcula ICMS
-   /* public void calculoICMS(OrcamentoModel orcamentoModel) {
-        BigDecimal valorOrcamento = orcamentoModel.getValorOrcamento();
-        String icmsEstados = orcamentoModel.getIcmsEstados().toString();
-        BigDecimal icmsMG = new BigDecimal("0.18");
-        BigDecimal icmsSP = new BigDecimal("0.12");
-        BigDecimal icmsRJ = new BigDecimal("0.17");
-        if (icmsEstados.equals("ICMS_MG")) {
-            orcamentoModel.setValorICMS(valorOrcamento.multiply(icmsMG));
-        } else if (icmsEstados.equals("ICMS_SP")) {
-            orcamentoModel.setValorICMS(valorOrcamento.multiply(icmsSP));
-        } else {
-            orcamentoModel.setValorICMS(valorOrcamento.multiply(icmsRJ));
-        }
-    }*/
 }
+
+
