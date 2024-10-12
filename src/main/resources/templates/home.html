@@ -23,13 +23,13 @@
             background-color: rgba(94, 197, 126, 0.3); /* Verde com transparência */
             z-index: -1; /* Certifica que fique atrás de outros elementos */
          }
-       .circle1 {
+         .circle1 {
             width: 150px;
             height: 150px;
             top: 50px;
             left: 50px;
           }
-        .circle2 {
+         .circle2 {
             width: 100px;
             height: 100px;
             bottom: 50px;
@@ -61,6 +61,10 @@
         }
 
 
+
+
+
+
         .navbar {
             display: flex;
             justify-content: space-between; /* deixa os botões alinhados, Alinha os itens da barra de navegação */
@@ -69,14 +73,12 @@
         }
 
 
+
         .navbar img {
             width: 50px; /* Tamanho ajustado da logo */
             height: auto;
             margin-left: 20px; /* Margem esquerda da logo */
         }
-
-
-
         .navbar button {
             background-color: white; /* Cor branca */
             color: black; /* Cor do texto */
@@ -101,12 +103,37 @@
 
 
 
+
+        .special-button {
+            display: inline-block; /* Para garantir que o elemento se comporte como um botão */
+            background-color: white; /* Cor branca */
+            color: black; /* Cor do texto */
+            border: 3px solid #004d00; /* Borda verde escura */
+            padding: 8px 12px;
+            margin: 0 8px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center; /* Centraliza o texto dentro do botão */
+        }
+
+        .special-button:hover {
+            background-color: rgba(79, 175, 104, 0.8); /* Cor de destaque */
+            transform: translateY(-2px);
+        }
+
+
+
+
+
+
         .container {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            height: calc(100vh - 100px);
+            height: calc(65vh - 50px);
             padding: 20px;
             margin-left: 20px;
         }
@@ -186,6 +213,7 @@
         </p>
         <div class="decor-circle circle1"></div>
     </div>
+    <div class="special-button"onclick="window.location.href='/orcamento'"> Alíquotas </div>
 </div>
 
 
