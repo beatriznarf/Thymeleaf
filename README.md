@@ -1,4 +1,4 @@
 ﻿# SpringBootCrudPatterns
-Bando de dados PostGresSQL
-Olhe no Properties.
-A ideia e a integração de um CRUD com uma função sendo refatorada para um design patterns.
+
+
+Desenvolvimento de telas para gerenciamento de ICMS e cadastro de usuário, utilizando o Thymeleaf como base para ativilidade avaliativa em sala de aula. 
