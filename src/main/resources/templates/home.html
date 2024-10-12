@@ -1,10 +1,12 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela Inicial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -13,17 +15,24 @@
             margin: 0;
             color: #333;
         }
+
+
         .navbar {
             display: flex;
-            justify-content: space-between; /* Alinha os itens da barra de navegação */
+            justify-content: space-between; /* deixa os botões alinhados, Alinha os itens da barra de navegação */
             padding: 0;
             margin: 20px;
         }
+
+
         .navbar img {
             width: 50px; /* Tamanho ajustado da logo */
             height: auto;
             margin-left: 20px; /* Margem esquerda da logo */
         }
+
+
+
         .navbar button {
             background-color: white; /* Cor branca */
             color: black; /* Cor do texto */
@@ -36,6 +45,8 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s, transform 0.3s;
         }
+
+
         .navbar button:hover {
             background-color: rgba(79, 175, 104, 0.8); /* Cor de destaque */
             transform: translateY(-2px);
@@ -43,6 +54,9 @@
         .navbar button i {
             margin-right: 8px;
         }
+
+
+
         .container {
             display: flex;
             flex-direction: column;
@@ -52,6 +66,8 @@
             padding: 20px;
             margin-left: 20px;
         }
+
+
         .content {
             max-width: 600px;
             margin-top: 20px;
@@ -84,12 +100,17 @@
             font-weight: bold;
         }
     </style>
+
+
 </head>
 <body>
+
+
+
 <div class="navbar">
     <img src="https://cdn-icons-png.flaticon.com/512/9309/9309051.png" alt="Logo">
     <div style="display: inline-block; margin-right: 20px;"> <!-- Ajuste para o canto direito -->
-        <button onclick="window.location.href='/'"><i class="fas fa-home"></i></button>
+        <button onclick="window.location.href='/'"><i class="fas fa-home"></i> Home </button>
         <button onclick="window.location.href='/usuarios'">Cadastro de Usuário</button>
         <button onclick="window.location.href='/usuarios/pesquisa'">Usuários Cadastrados</button>
         <button onclick="window.location.href='/orcamento'">Gerenciamento de Orçamento</button>
