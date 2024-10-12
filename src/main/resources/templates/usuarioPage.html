@@ -14,20 +14,39 @@
             color: #333;
         }
         .navbar {
-            display: flex;
-            justify-content: space-between; /* Alinha os itens da barra de navegação */
-            padding: 0;
+            background-color: rgba(94, 197, 126, 0.8); /* Cor alterada */
+            padding: 8px;
+            text-align: right;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             margin: 20px;
+            margin-bottom: 10px;
         }
-        .navbar img {
-            width: 50px; /* Tamanho ajustado da logo */
-            height: auto;
-            margin-left: 20px; /* Margem esquerda da logo */
+        .navbar .icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 8px;
+        }
+        .navbar .icon i {
+            color: white;
+            font-size: 20px;
+        }
+        .navbar .logo {
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
         }
         .navbar button {
-            background-color: white; /* Cor branca */
-            color: black; /* Cor do texto */
-            border: 2px solid #004d00; /* Borda verde escura */
+            background-color: rgba(94, 197, 126, 0.8); /* Cor alterada */
+            color: white;
+            border: 2px solid white;
             border-radius: 5px;
             padding: 8px 12px;
             margin: 0 8px;
@@ -37,7 +56,7 @@
             transition: background-color 0.3s, transform 0.3s;
         }
         .navbar button:hover {
-            background-color: rgba(79, 175, 104, 0.8); /* Cor de destaque */
+            background-color: rgba(79, 175, 104, 0.8); /* Cor alterada */
             transform: translateY(-2px);
         }
         .navbar button i {
@@ -76,9 +95,9 @@
             font-size: 14px;
         }
         button.submit {
-            background-color: white; /* Cor branca */
-            color: black;
-            border: 2px solid #004d00; /* Borda verde escura */
+            background-color: rgba(94, 197, 126, 0.8); /* Cor alterada */
+            color: white;
+            border: 1px solid white;
             padding: 8px;
             border-radius: 5px;
             cursor: pointer;
@@ -87,7 +106,7 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         button.submit:hover {
-            background-color: rgba(79, 175, 104, 0.8); /* Cor de destaque */
+            background-color: rgba(79, 175, 104, 0.8); /* Cor alterada */
         }
         table {
             margin-top: 20px;
@@ -106,8 +125,11 @@
 </head>
 <body>
 <div class="navbar">
-    <img src="https://cdn-icons-png.flaticon.com/512/9309/9309051.png" alt="Logo">
-    <div style="display: inline-block; margin-right: 20px;"> <!-- Ajuste para o canto direito -->
+    <div class="icon">
+        <i class="fas fa-file-invoice-dollar"></i>
+    </div>
+    <div class="logo">Planejamento Fiscal</div>
+    <div style="display: inline-block; margin-left: 100px;">
         <button onclick="window.location.href='/'"><i class="fas fa-home"></i></button>
         <button onclick="window.location.href='/usuarios'">Cadastro de Usuário</button>
         <button onclick="window.location.href='/usuarios/pesquisa'">Usuários Cadastrados</button>
@@ -116,41 +138,47 @@
 </div>
 <div class="container">
     <h1>Cadastro de Usuários</h1>
-    <form id="userForm" action="/usuarios" method="post">
-        <label for="nome">Nome do Usuário:</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite o nome" required>
-        <button type="submit" class="submit">Salvar</button>
+    <form id="usuarioForm" th:action="@{/usuarios}" th:object="${usuarioModel}" method="post">
+        <label>Nome do Usuário</label>
+        <input type="text" id="nomeUsuario" th:field="*{nomeUsuario}" required>
+        <button class="submit" id="salvarUsuario" type="submit">Salvar</button>
     </form>
+    <h2>Usuários Cadastrados</h2>
     <table>
         <thead>
         <tr>
             <th>ID</th>
-            <th>Nome</th>
+            <th>Nome do Usuário</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="usuario : ${usuarios}">
             <td th:text="${usuario.id}"></td>
-            <td th:text="${usuario.nome}"></td>
+            <td th:text="${usuario.nomeUsuario}"></td>
         </tr>
         </tbody>
     </table>
 </div>
 <script>
-    document.getElementById('userForm').addEventListener('submit', function (event) {
+    document.getElementById("usuarioForm").addEventListener("submit", function(event) {
         event.preventDefault();
-        const formData = new FormData(this);
 
-        fetch('/usuarios', {
-            method: 'POST',
+        var form = event.target;
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+            method: form.method,
             body: formData
-        })
-        .then(response => {
+        }).then(response => {
             if (response.ok) {
-                window.location.href = '/usuarios/pesquisa';
+                window.location.href = "/usuarios/pesquisa";
+                alert("Salvo com sucesso");
             } else {
-                alert('Erro ao salvar usuário');
+                console.error("Erro ao salvar o usuário");
             }
+        }).catch(error => {
+            console.error("Erro ao salvar o usuário", error);
+            alert("Erro ao Salvar");
         });
     });
 </script>
