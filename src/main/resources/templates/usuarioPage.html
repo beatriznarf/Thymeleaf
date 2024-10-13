@@ -121,6 +121,21 @@
         th {
             background-color: rgba(94, 197, 126, 0.8); /* Cor alterada */
         }
+
+        .decor-circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(94, 197, 126, 0.3); /* Verde com transparência */
+            z-index: -1; /* Certifica que fique atrás de outros elementos */
+        }
+        .circle1 {
+            width: 150px;
+            height: 150px;
+            top: 50px; /* Ajuste conforme necessário */
+            left: 50px; /* Ajuste conforme necessário */
+        }
+
+
     </style>
 </head>
 <body>
@@ -138,12 +153,15 @@
 
 
 <div class="container">
+
     <h1>Cadastro de Usuários</h1>
     <form id="usuarioForm" th:action="@{/usuarios}" th:object="${usuarioModel}" method="post">
         <label>Nome do Usuário</label>
         <input type="text" id="nomeUsuario" th:field="*{nomeUsuario}" required>
         <button class="submit" id="salvarUsuario" type="submit">Salvar</button>
     </form>
+    <div class="decor-circle circle1"></div>
+    <div class="decor-circle circle1"></div>
     <h2>Usuários Cadastrados</h2>
     <table>
         <thead>
